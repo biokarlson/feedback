@@ -3,6 +3,7 @@ import os
 import sqlite3
 
 from aiogram import Bot, Dispatcher, F
+from aiogram.filters import CommandStart
 from aiogram.types import Message
 from dotenv import load_dotenv
 
@@ -17,6 +18,14 @@ db.execute(
     "CREATE TABLE IF NOT EXISTS map ("
     "msg_id INTEGER PRIMARY KEY, user_id INTEGER, user_msg_id INTEGER)"
 )
+
+
+WELCOME = "Перешлите скриншот оплаты, ваше имя и первую букву фамилии"
+
+
+@dp.message(CommandStart(), F.chat.type == "private")
+async def start(m: Message):
+    await m.answer(WELCOME)
 
 
 @dp.message(F.chat.type == "private")
