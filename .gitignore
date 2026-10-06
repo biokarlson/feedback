@@ -1,0 +1,5 @@
+.env
+feedback.db
+__pycache__/
+*.pyc
+.venv/
