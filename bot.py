@@ -20,7 +20,10 @@ db.execute(
 )
 
 
-WELCOME = "Перешлите скриншот оплаты, ваше имя и первую букву фамилии"
+WELCOME = (
+    "Оплатить можно по ссылке - https://alfaonline.org/public/mrv2/aX8fuVFTc4\n"
+    "После этого пришлите сюда скриншот оплаты, ваше имя и первую букву фамилии"
+)
 
 
 @dp.message(CommandStart(), F.chat.type == "private")
